@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>header</title>
+</head>
+<body>
+<header th:fragment="header">
+    <nav class="inner_1280">
+        <div class="top_nav">
+            <div class="nav_login" th:if="${session.loginId != null}">
+                <ul>
+                    <li>
+                        <a href="#" th:text="${session.loginName}"></a>
+                        <span> 님 환영합니다.</span>
+                    </li>
+                    <li>
+                        <a href="/logout">로그아웃</a>
+                    </li>
+                    <li>
+                        <a href="#">고객센터</a>
+                    </li>
+                    <li>
+                        <a href="#">찜목록</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_login" th:if="${session.loginId == null}">
+                <ul>
+                    <li>
+                        <a href="/login">로그인</a>
+                    </li>
+                    <li>
+                        <a href="/register">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="#">고객센터</a>
+                    </li>
+                    <li>
+                        <a href="#">찜목록</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btm_nav">
+            <div class="nav_logo">
+                <a href="/" class="logo_img"></a>
+            </div>
+            <div class="nav_menu">
+                <input type="text" placeholder="인연을 검색하세요">
+                <a href="#" class="search_ico">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </div>
+            <div class="nav_cate">
+                <a href="#">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+</body>
+</html>
