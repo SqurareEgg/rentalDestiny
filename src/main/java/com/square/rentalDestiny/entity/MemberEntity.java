@@ -28,9 +28,6 @@ public class MemberEntity {
     private String memberAddr;
 
     @Column
-    private String memberDetailAddr;
-
-    @Column
     private String memberEmail;
 
     public static MemberEntity toMemberEntity(MemberDTO memberDTO) {
@@ -39,7 +36,7 @@ public class MemberEntity {
         memberEntity.setMemberPw(memberDTO.getMemberPw());
         memberEntity.setMemberName(memberDTO.getMemberName());
         memberEntity.setMemberAddr(memberDTO.getMemberAddr());
-        memberEntity.setMemberDetailAddr(memberDTO.getMemberDetailAddr());
+//        memberEntity.setMemberDetailAddr(memberDTO.getMemberDetailAddr());
         memberEntity.setMemberEmail(memberDTO.getMemberEmail());
 
         return memberEntity;
